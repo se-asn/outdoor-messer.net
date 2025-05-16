@@ -1,0 +1,164 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Outdoor Messer Guide",
+    "url": "https://outdoor-messer.net/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://outdoor-messer.net/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "description": "Umfassender Guide für Outdoor-Messer: Das beste Outdoor Messer unter 50 Euro, Messerpflege Anleitung für Bushcraft Messer und rechtliche Hinweise zu feststehenden Messern für Camping.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Outdoor Messer Guide",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://outdoor-messer.net/images/logo.webp"
+      }
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Grundlagen",
+          "url": "https://outdoor-messer.net/#grundlagen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Messerpflege",
+          "url": "https://outdoor-messer.net/#pflege"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Top 3 Messer",
+          "url": "https://outdoor-messer.net/#top-3-messer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Rechtliches",
+          "url": "https://outdoor-messer.net/#rechtliches"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "FAQ",
+          "url": "https://outdoor-messer.net/#faq"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Glossar",
+          "url": "https://outdoor-messer.net/#glossar"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Welche Stahlsorte ist die beste für Outdoor-Messer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die 'beste' Stahlsorte hängt stark vom Einsatzzweck ab. Für allgemeine Outdoor-Aktivitäten empfehlen wir rostbeständige Stähle wie: 440C (gute Rostbeständigkeit, einfache Schärfbarkeit, 57-58 HRC), 12C27 (schwedischer Sandvik-Stahl mit ausgewogener Leistung, 57-59 HRC, in Mora-Messern verwendet) oder 14C28N (verbesserte Version des 12C27 mit höherer Korrosionsbeständigkeit). Für höhere Ansprüche sind Premium-Stähle wie S30V oder S35VN (ausgezeichnete Schnitthaltigkeit und Rostbeständigkeit, 59-61 HRC) empfehlenswert."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie pflege ich mein Outdoor-Messer richtig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die richtige Messerpflege verlängert die Lebensdauer erheblich: 1) Nach jedem Gebrauch reinigen - besonders bei Kontakt mit Feuchtigkeit oder korrosiven Materialien. 2) Die Klinge vollständig trocknen lassen oder abtrocknen. 3) Bei Karbonstählen regelmäßig leicht einölen (Kamelienöl, Ballistol oder spezielles Messeröl). 4) Die Schneide regelmäßig nachschärfen, bevor sie zu stumpf wird, am besten mit einem geeigneten Schleifstein. 5) Bei Klappmessern: Gelenke und Verriegelungsmechanismen sauber halten und gelegentlich mit einem Tropfen Öl schmieren."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Outdoor-Messer sind in Deutschland legal zu führen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Deutschland gilt das Waffengesetz für Messer. Folgende Outdoor-Messer sind legal zu führen (Stand 2025): 1) Feststehende Messer mit einer Klingenlänge bis 12 cm dürfen mitgeführt werden, wenn ein berechtigtes Interesse vorliegt (z.B. Camping, Wandern, Bushcraft). 2) Taschenmesser mit beidseitig geschliffener Klinge ohne Einhandöffnung oder Arretierung sind generell erlaubt. 3) Einhandmesser und arretierbare Messer dürfen nur auf dem eigenen Grundstück oder mit berechtigtem Interesse (z.B. Arbeit, Brauchtum) geführt werden. Verboten sind: Fallmesser, Butterfly-Messer, Faustmesser und versteckte Klingensysteme."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist das beste Outdoor-Messer für Anfänger?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Für Anfänger empfehlen wir ein Outdoor Messer, das robust, vielseitig und preiswert ist. Das beste Outdoor Messer für Anfänger ist eines mit folgenden Eigenschaften: 1) Feststehende Klinge für Stabilität. 2) Mittlere Klingenlänge (9-12 cm) für vielseitige Anwendung. 3) Rostfreier Stahl für pflegeleichte Handhabung. 4) Full-Tang-Konstruktion (durchgehende Klinge) für höhere Stabilität. 5) Ergonomischer Griff für sicheres Arbeiten. 6) Preislich im Bereich von 30-50 Euro. Konkrete Empfehlungen: Mora Companion, Opinel Nr. 8 (Klappmesser) oder Fällkniven F1 (höherpreisig)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Grindarten gibt es bei Messern und welche eignet sich wofür?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Verschiedene Messerschliffe (Grinds) haben unterschiedliche Vor- und Nachteile: 1) Flachschliff (Flat Grind): Allrounder mit guter Schneidleistung und Haltbarkeit. 2) Hohlschliff (Hollow Grind): Extrem scharf, aber weniger robust - ideal für präzise Schnitte. 3) Konvexschliff (Convex Grind): Sehr robust mit guter Schneidleistung - ideal für harte Outdoor-Arbeiten. 4) Scandi-Schliff: Sehr gut zum Holzschnitzen und leicht nachzuschärfen - typisch für skandinavische Bushcraft-Messer. 5) Keilschliff (V-Grind/Flat V): Robuster Allrounder mit guter Balance aus Schärfe und Haltbarkeit. Für Outdoor-Einsatz sind Konvexschliff und Scandi-Schliff besonders beliebt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie kann ich feststellen, ob ein Outdoor Messer legal in Deutschland ist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Um die Legalität eines Outdoor Messers in Deutschland zu prüfen (Stand 2025), sollten Sie Folgendes beachten: 1) Messen Sie die Klingenlänge - feststehende Messer mit einer Klingenlänge bis 12 cm sind mit berechtigtem Interesse erlaubt. 2) Überprüfen Sie den Öffnungsmechanismus - Einhandmesser (mit einer Hand zu öffnen) unterliegen strengeren Regelungen. 3) Prüfen Sie, ob das Messer arretierbar ist (feststellbare Klinge) - solche Messer dürfen nicht im öffentlichen Raum mitgeführt werden, außer mit berechtigtem Interesse. 4) Verbotene Messertypen wie Fallmesser, Butterfly-Messer oder versteckte Klingensysteme dürfen generell nicht besessen werden. Im Zweifelsfall konsultieren Sie die aktuelle Fassung des Waffengesetzes oder fragen Sie bei einer Behörde nach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welches Outdoor Messer unter 50 Euro ist am besten für Bushcraft geeignet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Das beste Outdoor Messer unter 50 Euro für Bushcraft-Aktivitäten ist eindeutig der Mora Companion. Dieses Messer bietet ein hervorragendes Preis-Leistungs-Verhältnis mit folgenden Vorteilen: 1) Sehr scharfe Scandi-Schliff-Klinge, die sich perfekt für Holzarbeiten eignet. 2) Hochwertige Stahlklinge aus rostbeständigem 12C27 Sandvik-Stahl (58-59 HRC). 3) Ergonomischer, rutschfester Griff auch bei Nässe. 4) Robuste, aber leichte Konstruktion (unter 120g). 5) Inklusive stabiler Kunststoffscheide. Alternativen in dieser Preisklasse sind das Opinel Nr. 8 Outdoor (für einfache Aufgaben) oder das Condor Bushlore, das etwas robuster aber auch schwerer ist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie reinige ich mein Outdoor-Messer nach Gebrauch am Lagerfeuer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nach dem Gebrauch am Lagerfeuer ist die richtige Messerpflege besonders wichtig: 1) Entfernen Sie Ruß und Harz mit einem feuchten Tuch und mildem Spülmittel. Bei hartnäckigen Verschmutzungen kann ein wenig Alkohol (z.B. Isopropanol) helfen. 2) Achten Sie besonders auf den Übergang zwischen Klinge und Griff, wo sich leicht Schmutz ansammeln kann. 3) Bei Holzgriffen sollten Sie darauf achten, dass diese nicht zu lange im Wasser liegen. 4) Spülen Sie das Messer gründlich ab und trocknen Sie es vollständig, um Rostbildung zu vermeiden. 5) Bei Karbonstählen anschließend unbedingt eine dünne Schicht Öl (Kamelienöl oder Ballistol) auftragen. 6) Überprüfen Sie auch die Scheide auf Verschmutzungen und reinigen Sie diese gegebenenfalls."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Mora Companion Outdoor Messer",
+    "image": "https://outdoor-messer.net/images/messer/mora-companion.jpg",
+    "description": "Das Mora Companion ist ein robustes und zuverlässiges feststehende Messer für Outdoor und Bushcraft Aktivitäten, mit Scandinavian-Grind und rostfreiem Sandvik-Stahl 12C27.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Morakniv"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://outdoor-messer.net/#top-3-messer",
+      "priceCurrency": "EUR",
+      "price": "29.99",
+      "availability": "https://schema.org/InStock"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.8",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Outdoor Messer Guide Team"
+      },
+      "reviewBody": "Das Mora Companion ist das beste Outdoor Messer unter 50 Euro für Einsteiger und erfahrene Outdoor-Enthusiasten gleichermaßen. Es kombiniert hervorragende Schnittleistung mit robuster Verarbeitung und ist dabei vielseitig einsetzbar."
+    }
+  }
+]

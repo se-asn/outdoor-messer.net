@@ -1,0 +1,63 @@
+{
+  "name": "Outdoor Messer Guide",
+  "short_name": "Outdoor Messer",
+  "description": "Umfassender Guide für Outdoor-Messer: Das beste Outdoor Messer unter 50 Euro, Messerpflege Anleitung für Bushcraft Messer, rechtliche Hinweise zu feststehenden Messern für Camping und Empfehlungen für Anfänger.",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "orientation": "any",
+  "categories": ["lifestyle", "outdoor", "tools"],
+  "lang": "de-DE",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Top 3 Messer",
+      "short_name": "Top Messer",
+      "description": "Zeigt die besten Outdoor Messer unter 50 Euro",
+      "url": "/#top-3-messer",
+      "icons": [{ "src": "/images/icons/favicon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Messerpflege Anleitung",
+      "short_name": "Pflege",
+      "description": "Anleitung zur richtigen Pflege von Bushcraft Messern",
+      "url": "/#pflege",
+      "icons": [{ "src": "/images/icons/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "icons": [
+    {
+      "src": "/images/icons/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/mstile-310x310.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    }
+  ]
+}

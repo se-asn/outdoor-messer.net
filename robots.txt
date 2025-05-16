@@ -1,0 +1,67 @@
+# robots.txt für outdoor-messer.net
+# Zuletzt aktualisiert: 15.05.2025
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+Disallow: /docs/
+Disallow: /*.json$
+Disallow: /*.xml$
+Allow: /sitemap.xml
+Allow: /opensearch.xml
+Allow: /manifest.json
+
+# Spezifische Bot-Einstellungen
+User-agent: Googlebot
+Allow: /
+Allow: /*.js
+Allow: /*.css
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.avif
+Allow: /*.svg
+
+# Optimale Crawl-Rate für Google
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Ressourcen-Hinweise
+User-agent: *
+Disallow: /js/bundle.min.js.map
+Disallow: /css/bundle.min.css.map
+Disallow: /sw.js
+
+# GPTBot Einstellungen (OpenAI Crawler)
+User-agent: GPTBot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://www.outdoor-messer.net/sitemap.xml
+Sitemap: https://www.outdoor-messer.net/image-sitemap.xml
+Allow: /*.js
+Allow: /*.css
+
+# Social Media Bots
+User-agent: Twitterbot
+Allow: /
+Allow: /images/
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /images/
+
+# Crawl-Verzögerung um Server zu schonen
+Crawl-delay: 5
+
+# Sitemap-Pfad
+Sitemap: https://outdoor-messer.net/sitemap.xml

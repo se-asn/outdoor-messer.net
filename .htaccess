@@ -1,0 +1,179 @@
+# Apache Konfiguration für outdoor-messer.net
+# Hauptkonfigurationsdatei für Performance und Sicherheit
+
+# Aktiviere den Rewrite-Engine
+RewriteEngine On
+
+# 1. URL-Umschreibung und Weiterleitungen
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Nicht-www auf www umleiten (außer auf lokaler Entwicklungsumgebung)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Entferne trailing slashes bei nicht-Verzeichnissen
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Häufige Schreibfehler und alte URLs umleiten
+RewriteRule ^messerpflege/?$ /#pflege [R=301,L]
+RewriteRule ^einsteiger-messer/?$ /#grundlagen [R=301,L]
+RewriteRule ^top-messer/?$ /#top-3-messer [R=301,L]
+RewriteRule ^recht/?$ /#rechtliches [R=301,L]
+RewriteRule ^fragen/?$ /#faq [R=301,L]
+RewriteRule ^begriffe/?$ /#glossar [R=301,L]
+# Neue Longtail-Keyword-URLs für SEO
+RewriteRule ^legale-bushcraft-messer/?$ /#bushcraft-messer [R=301,L]
+RewriteRule ^messerpflege-anleitung/?$ /#pflege [R=301,L]
+RewriteRule ^outdoor-messer-unter-50-euro/?$ /#budget-messer [R=301,L]
+RewriteRule ^feststehende-messer-camping/?$ /#camping-messer [R=301,L]
+
+# Canonical URL für die Startseite erzwingen
+RewriteCond %{REQUEST_URI} ^/index\.html$ [OR]
+RewriteCond %{REQUEST_URI} ^/index\.php$
+RewriteRule (.*) / [R=301,L]
+  
+# 2. Browser-Caching für optimale Performance
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Standardeinstellung
+  ExpiresDefault "access plus 1 month"
+  
+  # HTML Dokumente (kürzer cachen, da sie sich häufiger ändern können)
+  ExpiresByType text/html "access plus 1 hour"
+  
+  # CSS und JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  
+  # Bilder
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # Fonts
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  
+  # Daten
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+</IfModule>
+
+# 3. Cache-Kontrolle und HTTP-Header
+<IfModule mod_headers.c>
+  # Optimierte Cache-Kontrolle für statische Assets mit versioning
+  <FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|webp|avif|woff|woff2|ttf|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Strikte Cache-Kontrolle für HTML und XML
+  <FilesMatch "\.(html|xml)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+
+  # Keine Caching für potenziell sensible Ressourcen
+  <FilesMatch "\.(json)$">
+    Header set Cache-Control "private, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+  
+  # Sicherheits-Header
+  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
+  
+  # Vary-Header für korrekte Zwischenspeicherung
+  Header append Vary Accept-Encoding
+  
+  # Vary-Header für WebP und AVIF Bilder
+  <FilesMatch "\.(jpe?g|png|webp|avif)$">
+    Header append Vary Accept
+  </FilesMatch>
+</IfModule>
+
+# 4. Kompression aktivieren
+<IfModule mod_deflate.c>
+  # Komprimierung für verschiedene Dateitypen aktivieren
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/javascript application/javascript application/json application/xml
+  
+  # Komprimierung für Bilder (bereits komprimierte Formate ausgenommen)
+  AddOutputFilterByType DEFLATE image/svg+xml
+  
+  # Ältere Browser-Kompatibilität
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  
+  # Keine Komprimierung für bereits komprimierte Dateitypen
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|avif|zip|gz|bz2|rar)$ no-gzip dont-vary
+</IfModule>
+
+# 5. Bildoptimierung - WebP/AVIF-Unterstützung
+<IfModule mod_rewrite.c>
+  # WebP
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+  
+  # AVIF (wenn Browser AVIF unterstützt und AVIF-Version vorhanden ist)
+  RewriteCond %{HTTP_ACCEPT} image/avif
+  RewriteCond %{DOCUMENT_ROOT}/$1.avif -f
+  RewriteRule (.+)\.(jpe?g|png|webp)$ $1.avif [T=image/avif,E=accept:1]
+</IfModule>
+
+# MIME-Typen für moderne Bildformate
+AddType image/webp .webp
+AddType image/avif .avif
+
+# 6. Fehlerseiten
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+ErrorDocument 503 /offline.html
+
+# 7. Verzeichnisauflistung deaktivieren
+Options -Indexes
+
+# 8. PHP-Einstellungen (falls PHP verwendet wird)
+<IfModule mod_php7.c>
+  php_value upload_max_filesize 20M
+  php_value post_max_size 20M
+  php_value max_execution_time 300
+  php_value max_input_time 300
+  php_value memory_limit 256M
+</IfModule>
+
+# 9. Verhindern des Zugriffs auf kritische Dateien
+<FilesMatch "(^\.htaccess|\.htpasswd|\.git|\.env|\.gitignore|\.travis\.yml|composer\.json|package\.json|package-lock\.json|\.php\.ini)">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+# 10. Preload und Prefetch für wichtige Ressourcen
+<IfModule mod_headers.c>  <FilesMatch "index\.html">
+    Header add Link "</css/bundle.min.css>; rel=preload; as=style"
+    Header add Link "</js/main.min.js>; rel=preload; as=script"
+    Header add Link "</images/logo.webp>; rel=preload; as=image; type=image/webp"
+    # DNS-Prefetch für externe Domains
+    Header add Link "https://fonts.googleapis.com; rel=dns-prefetch"
+    Header add Link "https://fonts.gstatic.com; rel=dns-prefetch"
+  </FilesMatch>
+</IfModule>

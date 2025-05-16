@@ -1,0 +1,45 @@
+{
+  "name": "outdoor-messer-website",
+  "version": "1.0.0",
+  "description": "Outdoor Messer Guide Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8080",
+    "optimize:css": "node scripts/optimize-assets.js",
+    "optimize:images": "node scripts/optimize-images.js",
+    "optimize": "npm run optimize:css && npm run optimize:images",
+    "build": "npm run optimize"
+  },
+  "keywords": [
+    "outdoor",
+    "messer",
+    "bushcraft",
+    "camping"
+  ],
+  "author": "Outdoor-Messer.net",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "outdoor-messer-website": "file:"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "clean-css": "^5.3.2",
+    "critical": "^5.1.0",
+    "csso": "^5.0.5",
+    "glob": "^8.1.0",
+    "purgecss": "^5.0.0",
+    "sharp": "^0.32.1",
+    "terser": "^5.19.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "browserslist": [
+    ">0.3%",
+    "last 2 versions",
+    "not dead",
+    "not op_mini all"
+  ]
+}

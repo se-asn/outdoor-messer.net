@@ -1,0 +1,18 @@
+# Interne Dokumentation und Strategiedateien
+/docs/*.md
+/docs/.htaccess
+!README.md
+
+# Entwicklungsdateien
+/scripts/
+/node_modules/
+*.log
+*.tmp
+
+# Sensible Dateien
+.env
+config.local.js
+
+# Betriebssystemdateien
+.DS_Store
+Thumbs.db
