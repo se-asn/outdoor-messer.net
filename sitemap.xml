@@ -2,9 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">  <url>
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">  
+  <url>
     <loc>https://outdoor-messer.net/</loc>
-    <lastmod>2025-05-15</lastmod>
+    <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,37 +13,45 @@
   <!-- Fragmente/Anker-Links für verschiedene Sektionen -->
   <url>
     <loc>https://outdoor-messer.net/#grundlagen</loc>
-    <lastmod>2025-05-15</lastmod>
+    <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://outdoor-messer.net/#pflege</loc>
-    <lastmod>2025-05-15</lastmod>
+    <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>  
+  <url>
     <loc>https://outdoor-messer.net/#top-3-messer</loc>
-    <lastmod>2025-05-15</lastmod>
+    <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://outdoor-messer.net/#rechtliches</loc>
-    <lastmod>2025-05-15</lastmod>
+    <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://outdoor-messer.net/#faq</loc>
-    <lastmod>2025-05-15</lastmod>
+    <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://outdoor-messer.net/#glossar</loc>
-    <lastmod>2025-05-15</lastmod>
+    <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <!-- Downloads -->
+  <url>
+    <loc>https://outdoor-messer.net/downloads/messerpflege-guide-2025.pdf</loc>
+    <lastmod>2025-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

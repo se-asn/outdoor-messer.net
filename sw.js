@@ -1,8 +1,9 @@
 // Service Worker for outdoor-messer.net
 const CACHE_NAME = "outdoor-messer-cache-v1";
-const STATIC_CACHE_NAME = "outdoor-messer-static-v1";
+const STATIC_CACHE_NAME = "outdoor-messer-static-v2"; // Version erhöht
 const DYNAMIC_CACHE_NAME = "outdoor-messer-dynamic-v1";
 const IMAGE_CACHE_NAME = "outdoor-messer-images-v1";
+const DOCUMENT_CACHE_NAME = "outdoor-messer-documents-v1"; // Neuer Cache für PDFs
 
 // Assets to precache for core experience
 const CORE_ASSETS = [
@@ -25,13 +26,22 @@ const EXTENDED_ASSETS = [
   "/favicon.ico",
 ];
 
+// Documents to cache for offline use
+const DOCUMENT_ASSETS = ["/downloads/messerpflege-guide-2025.pdf"];
+
 // Installation - Cache critical resources
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE_NAME).then((cache) => {
-      console.log("Precaching core assets");
-      return cache.addAll(CORE_ASSETS);
-    })
+    Promise.all([
+      caches.open(STATIC_CACHE_NAME).then((cache) => {
+        console.log("Precaching core assets");
+        return cache.addAll(CORE_ASSETS);
+      }),
+      caches.open(DOCUMENT_CACHE_NAME).then((cache) => {
+        console.log("Precaching document assets");
+        return cache.addAll(DOCUMENT_ASSETS);
+      }),
+    ])
   );
 
   // Skip waiting to activate immediately
@@ -44,6 +54,7 @@ self.addEventListener("activate", (event) => {
     STATIC_CACHE_NAME,
     DYNAMIC_CACHE_NAME,
     IMAGE_CACHE_NAME,
+    DOCUMENT_CACHE_NAME, // Neuer Cache zur Allowlist hinzugefügt
   ];
 
   event.waitUntil(

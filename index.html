@@ -1778,6 +1778,34 @@
         margin-top: 10px;
         opacity: 0.9;
       }
+
+      /* Support Button */
+      .support-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: var(--border-radius);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin-top: 1rem;
+        text-decoration: none;
+      }
+
+      .support-btn:hover {
+        background-color: #e58e26;
+        transform: translateY(-2px);
+      }
+
+      .support-btn svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 0.5rem;
+      }
     </style>
   </head>
   <body>
@@ -2191,6 +2219,22 @@
             </ol>
             <p>
               Mit dem PDS-Modell sorgst du dafür, dass dein Outdoor-Messer auch nach Jahren intensiver Nutzung zuverlässig funktioniert und dir gute Dienste leisten kann.
+            </p>
+            
+            <div class="download-box">
+              <div class="download-content">
+                <h4>Kostenloser Download: Messerpflege-Guide 2025</h4>
+                <p>Lade dir unseren ausführlichen Messerpflege-Guide als PDF herunter. Inklusive PDS-Modell, Schärftechniken und Pflegetipps für verschiedene Klingenstähle.</p>
+                <a href="downloads/messerpflege-guide-2025.pdf" class="btn download-btn" download>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="download-icon">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  PDF herunterladen (2,4 MB)
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -2834,7 +2878,7 @@
         </div>
       </section>
 
-      <!-- Glossary Section -->
+      <!-- Glossar Section -->
       <section id="glossar" style="background-color: #f2f5f3">
         <div class="container">
           <h2 class="section-title">Messer-Glossar: Wichtige Begriffe erklärt</h2>
@@ -3179,6 +3223,24 @@
               helfen Sie, nützliches Wissen über legale Outdoor-Messer in
               Deutschland zu verbreiten!
             </p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Unterstützen Sie uns</h3>
+            <p>
+              Wenn Ihnen unser Guide gefällt und Sie unsere Arbeit unterstützen möchten, hilft jede kleine Spende dabei, weiterhin hochwertige Inhalte zu erstellen.
+            </p>
+            <div class="support-section">
+              <a href="https://paypal.me/serdaras" target="_blank" rel="noopener" class="support-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 9V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h10a2 2 0 0 0 2-2v-3"></path>
+                  <path d="M9 14h12l-3-3"></path>
+                  <path d="M9 14l-3-3"></path>
+                  <path d="M9 14v5"></path>
+                </svg>
+                Über PayPal unterstützen
+              </a>
+            </div>
           </div>
         </div>
 

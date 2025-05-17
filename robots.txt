@@ -1,5 +1,5 @@
 # robots.txt für outdoor-messer.net
-# Zuletzt aktualisiert: 15.05.2025
+# Zuletzt aktualisiert: 17.05.2025
 
 User-agent: *
 Allow: /
@@ -13,12 +13,15 @@ Disallow: /*.xml$
 Allow: /sitemap.xml
 Allow: /opensearch.xml
 Allow: /manifest.json
+Allow: /downloads/
 
 # Spezifische Bot-Einstellungen
 User-agent: Googlebot
 Allow: /
 Allow: /*.js
 Allow: /*.css
+Allow: /downloads/
+Allow: /*.pdf
 
 User-agent: Googlebot-Image
 Allow: /images/
@@ -55,10 +58,12 @@ Allow: /*.css
 User-agent: Twitterbot
 Allow: /
 Allow: /images/
+Allow: /downloads/
 
 User-agent: facebookexternalhit
 Allow: /
 Allow: /images/
+Allow: /downloads/
 
 # Crawl-Verzögerung um Server zu schonen
 Crawl-delay: 5
