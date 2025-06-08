@@ -1,0 +1,26 @@
+# Disavow file for outdoor-messer.net
+# Created: June 8, 2025
+# Purpose: Remove spam URLs and malicious backlinks
+
+# SPAM URLs that don't belong to our website
+domain:marketing-not-working-check-out-these-tips
+domain:grow-local-business-with-online-marketing
+domain:5-important-tips-to-take-your-business-online
+domain:7-tactics-to-use-information-from-google-analytics
+domain:everything-you-need-to-know-about-gdpr
+domain:increase-conversions-with-an-aggressive-landing-page
+
+# URL patterns that indicate spam/hijacking
+https://outdoor-messer.net/marketing-not-working-check-out-these-tips/
+https://outdoor-messer.net/grow-local-business-with-online-marketing/
+https://outdoor-messer.net/5-important-tips-to-take-your-business-online/
+https://outdoor-messer.net/7-tactics-to-use-information-from-google-analytics/
+https://outdoor-messer.net/everything-you-need-to-know-about-gdpr/
+https://outdoor-messer.net/increase-conversions-with-an-aggressive-landing-page/
+https://www.outdoor-messer.net/cdn-cgi/l/email-protection
+
+# Note: This website is a single-page application about outdoor knives
+# Valid URLs are only:
+# https://outdoor-messer.net/
+# https://outdoor-messer.net/downloads/messerpflege-guide-2025.pdf
+# All other URLs are spam/hijacking attempts

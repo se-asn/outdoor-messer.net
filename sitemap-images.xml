@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://outdoor-messer.net/</loc>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/logo.webp</image:loc>
+      <image:title>Outdoor Messer Guide - Logo</image:title>
+      <image:caption>Logo des Outdoor Messer Guide</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/moraknife.webp</image:loc>
+      <image:title>Mora Companion Outdoor Messer</image:title>
+      <image:caption>Mora Companion - das beste Outdoor Messer unter 50 Euro für Bushcraft und Camping</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/mora-companion-detail.webp</image:loc>
+      <image:title>Mora Companion Detail Ansicht</image:title>
+      <image:caption>Detailansicht des Mora Companion Outdoor Messers mit Scandi-Schliff</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/mora-companion-in-use.webp</image:loc>
+      <image:title>Mora Companion im Einsatz</image:title>
+      <image:caption>Mora Companion beim Bushcraft - praktische Anwendung beim Holzschnitzen</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/opinel-no8.webp</image:loc>
+      <image:title>Opinel No. 8 Outdoor Klappmesser</image:title>
+      <image:caption>Opinel No. 8 - klassisches französisches Klappmesser für Outdoor und Camping</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/opinel-no8-detail.webp</image:loc>
+      <image:title>Opinel No. 8 Detailansicht</image:title>
+      <image:caption>Detailansicht des Opinel No. 8 mit Karbonstahl-Klinge und Buchenholzgriff</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/opinel-no8-in-use.webp</image:loc>
+      <image:title>Opinel No. 8 beim Camping</image:title>
+      <image:caption>Opinel No. 8 im praktischen Einsatz beim Camping und Outdoor-Kochen</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/buck-110.webp</image:loc>
+      <image:title>Buck 110 Folding Hunter</image:title>
+      <image:caption>Buck 110 Folding Hunter - legendäres amerikanisches Outdoor-Klappmesser</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/buck-110-detail.webp</image:loc>
+      <image:title>Buck 110 Detailansicht</image:title>
+      <image:caption>Detailansicht des Buck 110 mit 420HC Stahl und Holzschalen</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://outdoor-messer.net/images/messer/buck-110-in-use.webp</image:loc>
+      <image:title>Buck 110 im Einsatz</image:title>
+      <image:caption>Buck 110 Folding Hunter beim praktischen Outdoor-Einsatz</image:caption>
+      <image:license>https://outdoor-messer.net/</image:license>
+    </image:image>
+  </url>
+</urlset>

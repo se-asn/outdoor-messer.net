@@ -3,17 +3,22 @@
 
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
+Allow: /opensearch.xml
+Allow: /manifest.json
+Allow: /downloads/
+Allow: /structured-data.json
+Disallow: /google123456789.html
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /cgi-bin/
 Disallow: /docs/
-Disallow: /*.json$
-Disallow: /*.xml$
-Allow: /sitemap.xml
-Allow: /opensearch.xml
-Allow: /manifest.json
-Allow: /downloads/
+# Spezifische JSON/XML Dateien die nicht erlaubt sind
+Disallow: /package.json
+Disallow: /composer.json
+Disallow: /*.config.json
+Disallow: /*.backup.xml
 
 # Spezifische Bot-Einstellungen
 User-agent: Googlebot
@@ -49,6 +54,8 @@ Disallow: /private/
 Disallow: /admin/
 
 # Sitemaps
+Sitemap: https://outdoor-messer.net/sitemap.xml
+Sitemap: https://outdoor-messer.net/sitemap-images.xml
 Sitemap: https://www.outdoor-messer.net/sitemap.xml
 Sitemap: https://www.outdoor-messer.net/image-sitemap.xml
 Allow: /*.js

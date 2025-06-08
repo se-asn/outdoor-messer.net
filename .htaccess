@@ -9,28 +9,23 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# Nicht-www auf www umleiten (außer auf lokaler Entwicklungsumgebung)
-RewriteCond %{HTTP_HOST} !^www\. [NC]
+# www auf non-www umleiten (konsistent mit Sitemap und Canonical URLs)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteCond %{HTTP_HOST} !^localhost [NC]
 RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
-RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteRule (.*) https://%1%{REQUEST_URI} [R=301,L]
 
 # Entferne trailing slashes bei nicht-Verzeichnissen
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [R=301,L]
 
-# Häufige Schreibfehler und alte URLs umleiten
+# Häufige Schreibfehler und alte URLs umleiten zu korrekten Ankern
 RewriteRule ^messerpflege/?$ /#pflege [R=301,L]
-RewriteRule ^einsteiger-messer/?$ /#grundlagen [R=301,L]
+RewriteRule ^einsteiger-messer/?$ /#grundlagen [R=301,L]  
 RewriteRule ^top-messer/?$ /#top-3-messer [R=301,L]
 RewriteRule ^recht/?$ /#rechtliches [R=301,L]
 RewriteRule ^fragen/?$ /#faq [R=301,L]
 RewriteRule ^begriffe/?$ /#glossar [R=301,L]
-# Neue Longtail-Keyword-URLs für SEO
-RewriteRule ^legale-bushcraft-messer/?$ /#bushcraft-messer [R=301,L]
-RewriteRule ^messerpflege-anleitung/?$ /#pflege [R=301,L]
-RewriteRule ^outdoor-messer-unter-50-euro/?$ /#budget-messer [R=301,L]
-RewriteRule ^feststehende-messer-camping/?$ /#camping-messer [R=301,L]
 
 # Canonical URL für die Startseite erzwingen
 RewriteCond %{REQUEST_URI} ^/index\.html$ [OR]
@@ -161,11 +156,23 @@ Options -Indexes
   php_value memory_limit 256M
 </IfModule>
 
-# 9. Verhindern des Zugriffs auf kritische Dateien
+# 9. Verhindern des Zugriffs auf kritische Dateien und noindex für bestimmte Dateien
 <FilesMatch "(^\.htaccess|\.htpasswd|\.git|\.env|\.gitignore|\.travis\.yml|composer\.json|package\.json|package-lock\.json|\.php\.ini)">
   Order Allow,Deny
   Deny from all
 </FilesMatch>
+
+# Noindex-Header für spezielle Dateien setzen
+<IfModule mod_headers.c>
+  <FilesMatch "(404\.html|500\.html|offline\.html|google.*\.html)">
+    Header set X-Robots-Tag "noindex, follow"
+  </FilesMatch>
+  
+  # Sicherstellen, dass index.html indexiert wird
+  <FilesMatch "index\.html">
+    Header set X-Robots-Tag "index, follow"
+  </FilesMatch>
+</IfModule>
 
 # 10. Preload und Prefetch für wichtige Ressourcen
 <IfModule mod_headers.c>  <FilesMatch "index\.html">
@@ -177,3 +184,48 @@ Options -Indexes
     Header add Link "https://fonts.gstatic.com; rel=dns-prefetch"
   </FilesMatch>
 </IfModule>
+
+# ==========================================================================
+# SECURITY: ANTI-SPAM URL PROTECTION  
+# ==========================================================================
+
+# Block known spam URL patterns immediately
+RewriteRule ^marketing-not-working.* - [R=404,L]
+RewriteRule ^grow-local-business.* - [R=404,L]  
+RewriteRule ^5-important-tips.* - [R=404,L]
+RewriteRule ^7-tactics-to-use.* - [R=404,L]
+RewriteRule ^everything-you-need.* - [R=404,L]
+RewriteRule ^increase-conversions.* - [R=404,L]
+RewriteRule ^cdn-cgi/l/email-protection.* - [R=404,L]
+
+# Additional spam pattern protection
+RewriteRule ^.*marketing.*tips.* - [R=404,L]
+RewriteRule ^.*business.*online.* - [R=404,L]
+RewriteRule ^.*google.*analytics.* - [R=404,L]
+RewriteRule ^.*gdpr.* - [R=404,L]
+RewriteRule ^.*landing.*page.* - [R=404,L]
+
+# Only allow specific valid paths for our single-page app
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/index\.html$
+RewriteCond %{REQUEST_URI} !^/downloads/.*$
+RewriteCond %{REQUEST_URI} !^/images/.*$
+RewriteCond %{REQUEST_URI} !^/css/.*$
+RewriteCond %{REQUEST_URI} !^/js/.*$
+RewriteCond %{REQUEST_URI} !^/sitemap.*\.xml$
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteCond %{REQUEST_URI} !^/manifest\.json$
+RewriteCond %{REQUEST_URI} !^/structured-data\.json$
+RewriteCond %{REQUEST_URI} !^/opensearch\.xml$
+RewriteCond %{REQUEST_URI} !^/browserconfig\.xml$
+RewriteCond %{REQUEST_URI} !^/favicon\.ico$
+RewriteCond %{REQUEST_URI} !^/404\.html$
+RewriteCond %{REQUEST_URI} !^/500\.html$
+RewriteCond %{REQUEST_URI} !^/offline\.html$
+RewriteCond %{REQUEST_URI} !^/sw\.js$
+# If none of the above conditions match, return 404
+RewriteRule ^.+ - [R=404,L]
+
+# ==========================================================================
+# EXISTING REDIRECTS AND SETTINGS CONTINUE BELOW...
+# ==========================================================================
